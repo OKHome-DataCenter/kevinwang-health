@@ -96,6 +96,9 @@ nav a:hover {
 }
 
 .hero {
+  max-width: none;
+  width: 100%;
+  margin: 0;
   padding: 112px 8% 95px;
   background:
     radial-gradient(circle at 18% 22%, rgba(185, 154, 95, 0.28), transparent 32%),
