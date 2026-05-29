@@ -98,15 +98,42 @@ nav a:hover {
 .hero {
   padding: 112px 8% 95px;
   background:
-    linear-gradient(rgba(22, 36, 58, 0.82), rgba(22, 36, 58, 0.82)),
-    url("https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1800&q=80");
-  background-size: cover;
-  background-position: center;
+    radial-gradient(circle at 18% 22%, rgba(185, 154, 95, 0.28), transparent 32%),
+    radial-gradient(circle at 82% 18%, rgba(237, 244, 247, 0.16), transparent 30%),
+    linear-gradient(135deg, #16243a 0%, #223552 48%, #395b78 100%);
   color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -120px;
+  right: -90px;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: rgba(185, 154, 95, 0.16);
+  filter: blur(6px);
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: -160px;
+  left: -120px;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  background: rgba(237, 244, 247, 0.10);
+  filter: blur(8px);
 }
 
 .hero-content {
   max-width: 920px;
+  position: relative;
+  z-index: 2;
 }
 
 .eyebrow {
@@ -369,6 +396,15 @@ body.zh .notice p {
 
 body.zh .contact p {
   font-family: "PingFang TC", "Microsoft JhengHei", Arial, sans-serif;
+}
+
+.contact .buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 20px;
 }
 
 footer {
