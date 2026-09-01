@@ -12,13 +12,11 @@
 .point-list i {
   width: 24px;
   height: 24px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  background: #e5f0ec;
-  color: var(--teal);
+  display: block;
+  background: center / 24px 24px no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231d756e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z'/%3E%3Cpath d='m9 12 2 2 4-4'/%3E%3C/svg%3E");
   font-style: normal;
-  font-weight: 800;
+  text-indent: -9999px;
+  overflow: hidden;
   flex: none;
 }
 .expertise-grid article > b {
@@ -34,6 +32,15 @@
 .expertise-grid svg {
   width: 26px;
   height: 26px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.credential-emblem svg {
+  width: 58px;
+  height: 58px;
   fill: none;
   stroke: currentColor;
   stroke-width: 1.8;
@@ -118,7 +125,7 @@ textarea {
 .site-header nav {
   display: flex;
   align-items: center;
-  gap: 22px;
+  gap: clamp(18px, 1.8vw, 30px);
 }
 .site-header nav button {
   border: 0;
@@ -404,7 +411,7 @@ h1 em {
 }
 .timeline article {
   display: grid;
-  grid-template-columns: 150px 46px 1fr;
+  grid-template-columns: 150px 46px minmax(0, 1fr);
   gap: 12px;
   padding: 24px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.13);
@@ -604,6 +611,7 @@ footer span {
 }
 .floating-index button span {
   font: 700 10px Georgia, serif;
+  letter-spacing: 0.04em;
 }
 .floating-index button b {
   position: absolute;
