@@ -221,6 +221,32 @@ h1 em {
   font-style: normal;
   color: var(--sand);
 }
+.hero-identity {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 2vw, 26px);
+}
+.hero-identity > img {
+  width: clamp(72px, 8vw, 104px);
+  height: clamp(72px, 8vw, 104px);
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 34%;
+  border: 3px solid rgba(158, 215, 201, 0.72);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+  flex: none;
+}
+.hero-name {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+.hero-name:hover,
+.hero-name:focus-visible {
+  color: var(--mint);
+  border-bottom-color: currentColor;
+}
 .hero-subtitle {
   max-width: 720px;
   font:
@@ -311,6 +337,21 @@ h1 em {
   gap: 8px;
   font-weight: 800;
   text-decoration: none;
+}
+.resume-card > a + a {
+  margin-top: 10px;
+}
+.resume-card > a.linkedin-action {
+  background: var(--navy);
+  color: white;
+}
+.linkedin-action span {
+  width: 18px;
+  height: 18px;
+  display: grid;
+  place-items: center;
+  border: 1px solid currentColor;
+  font: 700 11px Arial, sans-serif;
 }
 .split-panel {
   display: grid;
@@ -715,6 +756,14 @@ footer span {
   }
   h1 {
     font-size: 52px;
+  }
+  .hero-identity {
+    align-items: flex-start;
+  }
+  .hero-identity > img {
+    width: 64px;
+    height: 64px;
+    margin-top: 4px;
   }
   .mini-stats {
     grid-template-columns: 1fr;
