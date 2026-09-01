@@ -156,6 +156,15 @@ textarea {
   color: var(--teal);
   margin-left: 5px;
 }
+.site-header nav .lang svg {
+  width: 17px;
+  height: 17px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
 .menu {
   display: none;
   border: 0;
@@ -411,7 +420,7 @@ h1 em {
 }
 .timeline article {
   display: grid;
-  grid-template-columns: 150px 46px minmax(0, 1fr);
+  grid-template-columns: 180px minmax(0, 1fr);
   gap: 12px;
   padding: 24px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.13);
