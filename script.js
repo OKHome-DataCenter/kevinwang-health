@@ -23,6 +23,10 @@ function horizontalJump(id) {
 
 document.querySelectorAll('.site-header [data-target]').forEach((button) => button.addEventListener('click', () => horizontalJump(button.dataset.target)));
 document.querySelectorAll('.floating-index [data-target]').forEach((button) => button.addEventListener('click', () => document.getElementById(button.dataset.target)?.scrollIntoView({ behavior: 'smooth', block: 'start' })));
+document.querySelectorAll('.site-header a.lang').forEach((link) => link.addEventListener('click', () => {
+  const destination = link.getAttribute('href').split('#')[0];
+  link.setAttribute('href', `${destination}#${ids[activeIndex]}`);
+}));
 document.querySelector('.menu').addEventListener('click', () => document.querySelector('.site-header nav').classList.toggle('open'));
 document.querySelector('form').addEventListener('submit', (event) => { event.preventDefault(); document.querySelector('.form-notice').hidden = false; });
 
@@ -31,4 +35,9 @@ const observer = new IntersectionObserver((entries) => {
   if (visible) setActive(ids.indexOf(visible.target.id));
 }, { rootMargin: '-20% 0px -55% 0px', threshold: [0.1, 0.35, 0.6] });
 ids.forEach((id) => observer.observe(document.getElementById(id)));
-setActive(0);
+const initialId = window.location.hash.slice(1);
+const initialIndex = ids.indexOf(initialId);
+setActive(initialIndex >= 0 ? initialIndex : 0);
+if (initialIndex >= 0) {
+  requestAnimationFrame(() => document.getElementById(initialId)?.scrollIntoView({ behavior: 'auto', block: 'start' }));
+}
