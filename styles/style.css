@@ -31,6 +31,15 @@
   color: var(--mint);
   font: 700 12px Georgia, serif;
 }
+.expertise-grid svg {
+  width: 26px;
+  height: 26px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
 .slide-right {
   animation: static-arrive-right 0.62s cubic-bezier(0.7, 0, 0.2, 1);
 }
